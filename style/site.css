@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+#container {
+    position: relative;
+}
+
+#container canvas, #overlay {
+    position: absolute;
+}
+
+#overlay {
+    background:rgba(0,0,0,0.4);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eeeeee;
+    margin: 15px;
+    padding: 15px;
+    z-index: 2000;
+}
+
+#result-title {
+    font-size: 18px;    
+    font-weight: bold;
+}
+
+#result-table {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eeeeee;
+}
+
+#parameter-title {
+    font-size: 16px;    
+    font-weight: bold;
+}
+
+#parameter-table {
+    font-size: 14px;    
+    font-family: Arial, Helvetica, sans-serif;
+    color: #eeeeee;
+}
+
+#input-parameters input {
+    width: 50px;
+    text-align: right;
+}
+
+/* Section for lightbox content */
+#mylightbox {
+    font-size: 14px;    
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    visibility: hidden;
+    padding: 16px;
+}
+
+#mylightbox h1 {
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+#mylightbox h2 {
+    margin-top: 14px;
+    margin-bottom: 8px;
+}
+
+#mylightbox p {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+/* Defines maximum width of lightbox */
+.featherlight-content {
+    max-width: 800px;
+}

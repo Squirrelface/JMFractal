@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Mandelbrot Fractal Using HTML5 Canvas</title>
+        <!-- Include reference to cropper css which is used for zooming -->
+        <link rel="stylesheet" href="./libs/jcrop/css/jquery.Jcrop.min.css"></link>
+        <!-- Include reference to featherlight plugin for displaying lightbox -->
+        <link rel="stylesheet" href="./libs/featherlight/featherlight.min.css"></link>
+        <!-- Reference the stule sheet we are using -->
+        <link rel="stylesheet" href="./style/site.css">
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <!-- Canvas where fractal is drawn -->
+            <canvas id="canvas">
+                Sorry, <strong>CANVAS</strong> is not supported by your browser. Get a more recent browser to view the Mandelbrot.!
+            </canvas>
+
+            <!-- Overlay section where all input and output is done -->
+            <div id="overlay">
+                    
+                <!-- Area that displays the result -->
+                <div>
+                    <p id="result-title">Statistics:</p>
+                    <p id="result"></p>
+                </div>
+
+                <!-- Area for settings parameters  -->
+                <div id="input-parameters">
+                    <p id="parameter-title">Input parameters:</p>
+                    <table id="parameter-table">
+                        <tr>
+                            <td>Width:</td>
+                            <td><input id="canvas_width" type="text"></td>
+                            <td>Height:</td>
+                            <td><input id="canvas_height" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Real min:</td>
+                            <td><input id="x_real_min" type="text"></td>
+                            <td>Real max:</td>
+                            <td><input id="x_real_max" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Img min:</td>
+                            <td><input id="y_img_min" type="text"></td>
+                            <td>Img max:</td>
+                            <td><input id="y_img_max" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Coloring:</td>
+                            <td colspan="3" align="right">
+                            <select id="color_scheme">
+                                <option value="white-grey-black">White/grey/black</option>
+                                <option value="black-grey-white">Black/grey/white</option>
+                                <option value="black-green-black">Black/green/black</option>
+                                <option value="black-blue-black">Black/blue/black</option>
+                                <option value="black-red-black">Black/red/black</option>
+                                <option value="red-black">Red on black</option>
+                                <option value="red-white">Red on white</option>
+                                <option value="rainbow">Rainbow</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align="center">
+                                <button id="btn_draw_fractal">Draw fractal and collect statitsics!</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <p><a href="#" data-featherlight="#mylightbox">About this site...</a></p>
+                </div>
+
+            </div>
+        
+        </div>
+            
+        <!-- Section that will be displayed in lightbox -->
+        <div id="mylightbox">
+            <h1>About this site</h1>
+            <p>This site was created as a high school project. The overall purpose of the project was to investigate a hypothesis and write a report of the findings.</p>
+            <p>We wanted to investigate if there was a significant difference in different browsers speed for simple mathematics. To make the project more fun we decided to investigate different browsers speed when calculting values for the Mandelbrot set. These calculations consist of simple multiplications, additions, subtractions, assignement and comparisons.</p>
+            <h2>Source code and results</h2>
+            <p>The source code and report (in Swedish) can be found at <a href="#">github repo</a>.</p>
+            <p>A brief summry of the results can be found in this <a href="#">reddit post</a>.</p>
+            <h2>Usage</h2>
+            <p>The user can generate a Mandelbrot by entering values for size of image, which part of the complex plane that should be rendered and which color scheme to use. Alternatively, the user can click and drag on an area of the image to zoom in there.</p>
+            <h2>Create a desktop background</h2>
+            <p>If you want a beutifull desktop image just enter the dimensions of your desktop in the width and height and adjust the rest of the parameters to your liking. When you have an image you want just right click the image and choose "Save as...".</p>
+            <h2>Creators</h2>
+            <p>This site was created by Micha Morales (<a href="mailto:micha@morales.com">micha@morales.com</a>) and Max Junestrand (<a href="mailto:max@junestrand.com">max@junestrand.com</a>) at Södra Latin, Stockholm.</p>
+        </div>
+
+        <!-- Include jquery that is used to retrieve elements, capture events and is required by the plugins-->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <!-- Include reference to cropper to use for zooming -->
+        <script type="text/javascript" src="./libs/jcrop/js/jquery.Jcrop.min.js"></script>
+        <!-- Include featherlight plugin to display lightbox -->
+        <script type="text/javascript" src="./libs/featherlight/featherlight.min.js"></script>
+        <!-- Include javascript file with site specific code -->
+        <script type="text/javascript" src="./script/site.js"></script>
+        
+    </body>
+        
+</html>
