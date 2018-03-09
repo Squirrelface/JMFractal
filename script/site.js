@@ -189,7 +189,9 @@ function drawFractal(result) {
     // Set canvas dimensions
     canvas.width = canvas_width;
     canvas.height = canvas_height;
-    
+    canvas.style.width = canvas_width + "px";
+    canvas.style.height = canvas_height + "px";
+
     // Create a 2d context object to use for the drawing
     var context = canvas.getContext('2d');
 
@@ -345,12 +347,25 @@ function initiateJcrop() {
 
 }
 
+// Function that loads an image in a new tab or window
+function canvasAsImageInNewWindow() {
+    var dataURL = canvas.toDataURL("image/png");
+    var newTab = window.open(dataURL, 'Image');
+    newTab.focus();
+}
+
 // This code is executed as soon as the document has been loaded
 $(document).ready(function() {
 
     // Hook up click event for draw button
     $('#btn_draw_fractal').on('click', function(evt) {
         initiateFractalDraw();
+        initiateJcrop();
+    });
+
+    // Hook up click event to show image in new window
+    $('#btn_image_in-New_window').on('click', function(evt) {
+        canvasAsImageInNewWindow();
     });
 
     // Start drawing first time
